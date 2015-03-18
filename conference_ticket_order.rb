@@ -3,6 +3,10 @@ class ConferenceTicketOrder
     @order_number = order_number
     @quantity = quantity
     @address = address
+
+    if quantity > 1  
+      raise ArgumentError.new('Conference tickets are limited to one per customer')  
+    end
   end
  
   def charge(payment_type)
@@ -49,7 +53,7 @@ class ConferenceTicketOrder
     report += "------|---------------------------------|------\n"
     report += "#{@quantity}     |"
     report += " Conference Ticket               |"
-    report += " $#{shipping + (quantity * 300.0)}"
+    report += " $#{'%.2f' % (shipping + (quantity * 300.0))}"
     report
     return report
   end

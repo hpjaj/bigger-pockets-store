@@ -1,4 +1,6 @@
-describe ConferenceTicketOrder do
+require_relative "conference_ticket_order"
+
+RSpec.describe ConferenceTicketOrder do
   context "a valid conference ticket order" do
     subject do
       ConferenceTicketOrder.new(3, 1, ["1234 Main St.", "New York, NY 12345"])

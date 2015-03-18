@@ -1,6 +1,7 @@
-require "rspec"
+require_relative "book_order"
 
-describe BookOrder do
+ 
+RSpec.describe BookOrder do
   context "with a physical book" do
     subject { BookOrder.new(1, 5, ["1234 Main St.", "New York, NY 12345"]) }
  
